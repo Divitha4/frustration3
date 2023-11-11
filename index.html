@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>Peaceful Park</h1>
+    </header>
+    <main>
+       <nav> <h1>Joy of Life</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `Once upon a time, in a bustling city filled with honking cars and busy people, there lived a man named Jack. Jack was always in a rush, running from one place to another, and constantly feeling frustrated by the fast-paced nature of the city.
+
+One day, as Jack was rushing to catch his train, he stumbled upon a small park tucked away between towering buildings. Curiosity got the better of him, and he decided to take a moment to explore this hidden oasis.
+
+As Jack entered the park, he was greeted by a gentle breeze that carried the scent of blooming flowers. The sound of birds chirping and children’s laughter filled the air. Jack found a cozy bench beneath a shady tree and sat down, taking in the sights and sounds around him.
+
+He watched as children played on the swings, their carefree laughter contagious. Nearby, a group of friends were having a picnic, sharing food and stories, their smiles radiant. Jack couldn't help but feel a sense of calmness wash over him.
+
+He closed his eyes and took a deep breath, allowing himself to be fully present in the moment. The worries and frustrations of the city faded away, replaced by a newfound appreciation for the simple joys of life.
+
+From that day forward, Jack made it a point to visit the park whenever he felt overwhelmed or frustrated. It became his sanctuary, a place where he could escape the chaos of the city and find peace within himself.
+
+As time went on, Jack’s perspective shifted. He realized that happiness and calmness could be found in the simplest of moments, whether it was watching the sunset, enjoying a cup of coffee, or sharing a laugh with a friend.
+
+So, my friend, the next time you’re feeling frustrated, take a moment to find your own park, your own sanctuary. It could be a quiet spot in nature, a favorite book, or even a funny video that makes you smile. Embrace those moments of peace and let them guide you back to happiness and calmness.
+
+Remember, happiness is often found in the little things, and sometimes all we need is a change of perspective to turn frustration into joy. 🌳😊`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
